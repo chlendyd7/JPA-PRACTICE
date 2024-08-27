@@ -25,12 +25,14 @@ public class Member {
 
     //=== 추가
     @Enumerated(EnumType.STRING)
+    @Column(name="role_type")
     private RoleType roleType;
 
     @Temporal(TemporalType.TIMESTAMP)
-    private Date createdDate;
+    private Date createdDate; 
 
     @Temporal(TemporalType.TIMESTAMP)
+    @Column(name="last_modified_date")
     private Date lastModifiedDate;
 
     @Lob

@@ -1,5 +1,7 @@
 package jpabook.start;
 
+import java.util.List;
+
 import javax.persistence.*;
 
 public class JpaMain2 {
@@ -36,6 +38,13 @@ public class JpaMain2 {
 		member.setAge(20);
 
 		Member findMember = em.find(Member.class, id);
+		System.out.println("findMember=" + findMember.getUsername()
+			+ ", age=" + findMember.getAge());
 		
+		List<Member> members =
+				em.createQuery("select m from Member m", Member.class).getResultList();
+		System.out.println("member.size=" + members.size());
+		
+		em.remove();
 	}
 }
