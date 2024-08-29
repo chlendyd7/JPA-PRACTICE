@@ -17,6 +17,7 @@ public class OrderItem {
     @JoinColumn(name = "ITEM_ID")
     private Item item;      //주문 상품
 
+    
     @ManyToOne
     @JoinColumn(name = "ORDER_ID")
     private Order order;    //주문
